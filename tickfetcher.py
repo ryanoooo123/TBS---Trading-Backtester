@@ -18,7 +18,6 @@ nowtstamp = int(dt.datetime.now().timestamp() * 1000)
 print(os.path.isfile(f'/Users/ryanyang/Desktop/TBS/histdata/{timeframe}.txt'))
 #print(exchange.fetch_ohlcv(symbol = symbol, timeframe = timeframe, since = 1672502400000, limit = 1000))
 #5min = 300,000
-#need 5886 times to finish 5m timeframe 1k limit from 2023 - 2026
 def turn(timeframe, since, nowtstamp):
 
     if timeframe[-1] == 'm':
