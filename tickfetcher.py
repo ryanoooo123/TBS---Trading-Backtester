@@ -15,17 +15,17 @@ since = 1672502400000
 sincedate = dt.datetime.fromtimestamp(int(since/1000)).strftime('%Y-%m-%d %H:%M:%S')
 nowtstamp = int(dt.datetime.now().timestamp() * 1000)
 
-print(os.path.isfile(f'/Users/ryanyang/Desktop/TBS/histdata/{timeframe}.txt'))
+print(os.path.isfile(f'/Users/ryanyang/Desktop/TBS/histdata/{timeframe}.parquet'))
 #print(exchange.fetch_ohlcv(symbol = symbol, timeframe = timeframe, since = 1672502400000, limit = 1000))
 #5min = 300,000
 def turn(timeframe, since, nowtstamp):
 
     if timeframe[-1] == 'm':
-        time = int(timeframe[0])
+        time = int(timeframe[:-1])
         millsec = time * 60 * 1000
 
     if timeframe[-1] == 'h':
-        time = int(timeframe[0])
+        time = int(timeframe[:-1])
         millsec = time * 60 * 60 * 1000
 
     ranges = nowtstamp - since
